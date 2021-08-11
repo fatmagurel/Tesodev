@@ -1,0 +1,15 @@
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\obj\Debug\netcoreapp3.1\Tesodev.Entities.csprojAssemblyReference.cache
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\obj\Debug\netcoreapp3.1\Tesodev.Entities.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\obj\Debug\netcoreapp3.1\Tesodev.Entities.AssemblyInfo.cs
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\obj\Debug\netcoreapp3.1\Tesodev.Entities.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\bin\Debug\netcoreapp3.1\Tesodev.Entities.deps.json
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\bin\Debug\netcoreapp3.1\Tesodev.Entities.runtimeconfig.json
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\bin\Debug\netcoreapp3.1\Tesodev.Entities.runtimeconfig.dev.json
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\bin\Debug\netcoreapp3.1\Tesodev.Entities.dll
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\bin\Debug\netcoreapp3.1\Tesodev.Entities.pdb
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\bin\Debug\netcoreapp3.1\Tesodev.Core.dll
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\bin\Debug\netcoreapp3.1\Tesodev.Core.pdb
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\obj\Debug\netcoreapp3.1\Tesodev.Entities.csproj.CopyComplete
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\obj\Debug\netcoreapp3.1\Tesodev.Entities.dll
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\obj\Debug\netcoreapp3.1\Tesodev.Entities.pdb
+C:\Users\user\source\repos\Tesodev\Tesodev.Entities\obj\Debug\netcoreapp3.1\Tesodev.Entities.genruntimeconfig.cache

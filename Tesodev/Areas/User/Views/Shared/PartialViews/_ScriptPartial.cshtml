@@ -1,0 +1,60 @@
+﻿
+<script src="~/js/vendor/cropper.min.js"></script>
+<script src="~/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="~/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="~/js/vendor/Chart.bundle.min.js"></script>
+<script src="~/js/vendor/chartjs-plugin-datalabels.js"></script>
+<script src="~/js/vendor/moment.min.js"></script>
+<script src="~/js/vendor/fullcalendar.min.js"></script>
+<script src="~/js/vendor/datatables.min.js"></script>
+<script src="~/js/vendor/perfect-scrollbar.min.js"></script>
+<script src="~/js/vendor/bootstrap-notify.min.js"></script>
+<script src="~/js/vendor/owl.carousel.min.js"></script>
+<script src="~/js/vendor/progressbar.min.js"></script>
+<script src="~/js/vendor/jquery.barrating.min.js"></script>
+<script src="~/js/vendor/select2.full.js"></script>
+<script src="~/js/vendor/nouislider.min.js"></script>
+<script src="~/js/vendor/bootstrap-datepicker.js"></script>
+<script src="~/js/vendor/Sortable.js"></script>
+<script src="~/js/vendor/dropzone.min.js"></script>
+<script src="~/js/vendor/mousetrap.min.js"></script>
+<script src="~/js/vendor/typeahead.bundle.js"></script>
+<script src="~/js/dore.script.js"></script>
+<script src="~/js/scripts.single.theme.js"></script>
+<script src="~/js/vendor/jquery.contextMenu.min.js"></script>
+<script src="~/js/scripts.js"></script>
+<script src="~/js/vendor/bootstrap-tagsinput.min.js"></script>
+<script src="~/js/vendor/jquery.smartWizard.min.js"></script>
+<script src="~/js/vendor/baguetteBox.min.js"></script>
+<script src="~/js/vendor/jquery.autoellipsis.js"></script>
+<script src="~/js/vendor/cropper.min.js"></script>
+<script src="~/js/vendor/jquery.smartWizard.min.js"></script>
+<script src="~/js/vendor/jquery.validate/jquery.validate.min.js"></script>
+<script src="~/js/vendor/jquery.validate/additional-methods.min.js"></script>
+<script src="~/js/dore-plugins/select.from.library.js"></script>
+<script src="~/js/scripts.single.theme.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/js/jquery.smartWizard.min.js" type="text/javascript"></script>
+
+
+
+@*modal da silme işlemi*@
+<script>
+    var path_to_delete;
+
+    $(".delete-item").click(function (e) {
+        path_to_delete = $(this).data('path');
+    });
+
+    $('#delete').click(function () {
+        window.location = path_to_delete;
+    });
+</script>
+
+@*smartwizart jquery kodları*@
+<script>
+    $(document).ready(function () {
+
+        $('#smartwizard').smartWizard();
+
+    });
+</script>

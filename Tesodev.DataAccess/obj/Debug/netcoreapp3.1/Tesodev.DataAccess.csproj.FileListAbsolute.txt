@@ -1,0 +1,17 @@
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\bin\Debug\netcoreapp3.1\Tesodev.Core.dll
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\bin\Debug\netcoreapp3.1\Tesodev.Entities.dll
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\obj\Debug\netcoreapp3.1\Tesodev.DataAccess.csprojAssemblyReference.cache
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\obj\Debug\netcoreapp3.1\Tesodev.DataAccess.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\obj\Debug\netcoreapp3.1\Tesodev.DataAccess.AssemblyInfo.cs
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\obj\Debug\netcoreapp3.1\Tesodev.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\bin\Debug\netcoreapp3.1\Tesodev.DataAccess.deps.json
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\bin\Debug\netcoreapp3.1\Tesodev.DataAccess.runtimeconfig.json
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\bin\Debug\netcoreapp3.1\Tesodev.DataAccess.runtimeconfig.dev.json
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\bin\Debug\netcoreapp3.1\Tesodev.DataAccess.dll
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\bin\Debug\netcoreapp3.1\Tesodev.DataAccess.pdb
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\bin\Debug\netcoreapp3.1\Tesodev.Entities.pdb
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\bin\Debug\netcoreapp3.1\Tesodev.Core.pdb
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\obj\Debug\netcoreapp3.1\Tesodev.DataAccess.csproj.CopyComplete
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\obj\Debug\netcoreapp3.1\Tesodev.DataAccess.dll
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\obj\Debug\netcoreapp3.1\Tesodev.DataAccess.pdb
+C:\Users\user\source\repos\Tesodev\Tesodev.DataAccess\obj\Debug\netcoreapp3.1\Tesodev.DataAccess.genruntimeconfig.cache

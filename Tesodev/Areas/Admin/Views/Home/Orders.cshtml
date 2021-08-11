@@ -1,0 +1,134 @@
+﻿@model IEnumerable<Tesodev.Entities.Entities.Order>
+@{
+    ViewData["Title"] = "Siparişler";
+}
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1>Sipariş Onay-Red Paneli</h1>
+                <div class="separator mb-5"></div>
+                
+                <div class="row list disable-text-selection">
+                    @*@foreach (var item in Model)
+        {
+            <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mr-4 mb-4" style="display:inline">
+                <div class="card">
+                    <div class="position-relative productPhoto">
+                        <a data-path="@Url.Action("OrderConfirm", "Home", new { id = item.ID })" data-toggle="modal" data-target="#exampleModal" id="delete-item" class="btn btn-outline-primary delete-item" style="cursor:pointer;">Onayla</a>
+                        <a data-path="@Url.Action("OrderDelete", "Home", new { id = item.ID })" data-toggle="modal" data-target="#exampleModal" id="delete-item" class="btn btn-outline-danger delete-item" style="cursor:pointer;">Reddet</a>
+                    </div>
+                </div>
+            </div>
+
+        }*@
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <table class="data-table data-table-scrollable responsive nowrap"
+                                           data-order="[[ 1, &quot;desc&quot; ]]">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Müşteri</th>
+                                                <th class="text-center">Ürün</th>
+                                                <th class="text-center">Fiyat</th>
+                                                <th class="text-center">Adet</th>
+                                                <th class="text-center">Adres</th>
+                                                <th class="text-center">Oluşturulma Tarihi</th>
+                                                <th class="text-center">Güncelleme Tarihi</th>
+                                                <th class="text-center">Sipariş Durumu</th>
+                                                <th class="text-center">İşlemler</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            @foreach (var item in Model)
+                                            {
+                                            <tr>
+                                                <td class="text-center">
+                                                    <p class="list-item-heading">@item.CustomerID</p>
+                                                </td>
+
+                                                <td class="text-center">
+                                                    @item.ProductID
+                                                </td>
+
+                                                <td class="text-center">
+                                                    @item.Price ₺
+                                                </td>
+
+                                                <td class="text-center">
+                                                    @item.Quantity
+                                                </td>
+
+                                                <td class="text-center">
+                                                    @item.AddressID
+                                                </td>
+
+                                                <td class="text-center">
+                                                    @item.CreatedAt
+                                                </td>
+
+                                                <td class="text-center">
+                                                    @item.UpdatedAt
+                                                </td>
+
+                                                @switch (item.Status)
+                                                {
+                                                    case Tesodev.Core.Enum.Status.Active:
+                                                        <td class="text-center">
+                                                            <p class="badge badge-pill badge-success">Onaylandı</p>
+                                                        </td>
+                                                        break;
+                                                    case Tesodev.Core.Enum.Status.None:
+                                                        <td class="text-center">
+                                                            <p class="badge badge-pill badge-danger">Onaylanmadı</p>
+                                                        </td>
+                                                        break;
+                                                    default:
+                                                        break;
+
+                                                }
+
+                                                <td class="text-center">
+                                                    <a asp-area="Admin" asp-controller="Home" asp-action="OrderConfirm" asp-route-id="@item.ID" class="btn btn-outline-success mb-1">Onayla</a>
+                                                    <a asp-area="Admin" asp-controller="Home" asp-action="OrderDelete" asp-route-id="@item.ID" class="btn btn-outline-dark mb-1">Reddet</a>
+
+                                                </td>
+                                            </tr>
+
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ürün Silme İşlemi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Silmek istediğinizden emin misiniz?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="delete" type="submit" class="btn btn-primary delete">Evet</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hayır</button>
+            </div>
+        </div>
+    </div>
+</div>

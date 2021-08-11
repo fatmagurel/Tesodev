@@ -1,0 +1,69 @@
+﻿@model Tesodev.Entities.Entities.Address
+@{
+    ViewData["Title"] = "Sipariş Tamamlama  Sayfası";
+}
+
+<main>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <h1>Sipariş Bilgileri</h1>
+                <div class="separator mb-5"></div>
+                <div class="row mb-5" style="display:inline">
+                    <div class="col-md-4 card px-4">
+                        <form enctype="multipart/form-data" asp-area="User" asp-controller="Home" asp-action="Information" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            
+                            <label class="form-group has-float-label mb-4 mt-4">
+                                <input name="AddressLine" class="form-control" type="text" />
+                                <span>AddressLine</span>
+                            </label>
+
+                            <label class="form-group has-float-label mb-4">
+                                <input name="City" required class="form-control" type="text" />
+                                <span>Şehir</span>
+                            </label>
+                            <label class="form-group has-float-label mb-4">
+                                <input name="Country" required class="form-control" type="text" />
+                                <span>Ülke</span>
+                            </label>
+                            <label class="form-group has-float-label mb-4">
+                                <input name="CityCode" class="form-control" type="text" pattern="\d*" title="Sadece sayısal değer girilebilir..." />
+                                <span>Şehir Kodu</span>
+                            </label>
+                            <div class="form-group d-none">
+                                <label name="Status" class="control-label"></label>
+                                <input name="Status" class="form-control" type="text" />
+                                <span name="Status" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Oluştur" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sipariş Onayı</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Siparişiniz Oluşturuluyor!</p>
+            </div>
+            <div class="modal-footer">
+                <button id="delete" type="submit" class="btn btn-primary delete">Evet</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hayır</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Tesodev.Entities.Entities.Product>
+@{
+    ViewData["Title"] = "Ürün";
+}
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1>Ürün Ekle</h1>
+                <div class="separator mb-5"></div>
+                <div class="row mb-5" style="display:inline">
+                    <div class="col-md-4 card">
+                        
+                        <form enctype="multipart/form-data" asp-area="Admin" asp-controller="Home" asp-action="Create" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label name="Name" class="control-label"></label>
+                                <input required name="Name" class="form-control" type="text" placeholder="Lütfen Ürün Adını Giriniz" />
+                                <span name="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label name="Price" class="control-label"></label>
+                                <input required name="Price" class="form-control" type="text" pattern="\d*" title="Sadece sayısal değer girilebilir..." placeholder="Lütfen Fiyat Bilgisini Giriniz" />
+                                <span name="Price" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label name="ImageUrl" class="control-label"></label>
+                                <input name="ImageUrl" class="form-control" type="file" accept="image/*" value="Resim Seç" placeholder="Resim Yok" />
+                            </div>
+                            
+                            @if (TempData["IsImage"] != null)
+                            {
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong>@TempData["IsImage"].ToString()</strong>
+                                </div>
+                            }
+                            <div class="form-group d-none">
+                                <label name="Status" class="control-label"></label>
+                                <input name="Status" class="form-control" />
+                                <span name="Status" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" value="Ekle" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row list disable-text-selection">
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mr-4 mb-4" style="display:inline">
+                            <div class="card">
+                                <div class="position-relative productPhoto">
+
+                                    <img class="card-img-top" src="~/img/products/@item.ImageUrl" alt="Image Product">
+                                    <a data-path="@Url.Action("Delete", "Home", new { id = item.ID })" data-toggle="modal" data-target="#exampleModal" id="delete-item" class="btn btn-outline-danger delete-item" style="cursor:pointer;"> Sil</a>
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="row text-center">
+                                        <div class="col-12">
+                                            <a>
+                                                <p class="list-item-heading mb-4 pt-1">
+                                                    Ürün Adı:
+                                                    <b> @item.Name</b>
+                                                </p>
+                                                <p class="list-item-heading mb-4 pt-1">
+                                                    Ürün Fiyatı:
+                                                    <b> @item.Price ₺</b>
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ürün Silme İşlemi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Silmek istediğinizden emin misiniz?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="delete" type="submit" class="btn btn-primary delete">Evet</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hayır</button>
+            </div>
+        </div>
+    </div>
+</div>

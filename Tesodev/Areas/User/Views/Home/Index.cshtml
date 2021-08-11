@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Tesodev.Entities.Entities.Product>
+@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1>Ürünler</h1>
+                <div class="separator mb-5"></div>
+
+                <div class="row list disable-text-selection">
+
+                    @foreach (var item in Model)
+                    {
+                        <form asp-action="ShoppingCartAdd" enctype="multipart/form-data" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mr-4 mb-4" style="display:inline">
+                                <div class="card mr-4">
+                                    <div class="position-relative productPhoto">
+                                        <img class="card-img-top" src="~/img/products/@item.ImageUrl" alt="Image Product">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+
+                                                <div class="form-group d-none">
+                                                    <input asp-for="@item.ID" name="ID" class="form-control" />
+                                                </div>
+                                                <p class="list-item-heading mb-4 pt-1">
+                                                    Ürün Adı:
+                                                    <b><span name="Name">@item.Name</span> </b>
+                                                </p>
+                                                <div class="form-group d-none">
+                                                    <input asp-for="@item.Name" name="Name" class="form-control" />
+                                                </div>
+                                                <p class="list-item-heading mb-4 pt-1">
+                                                    Ürün Fiyatı:
+                                                    <b><span name="Price">@item.Price ₺</span> </b>
+                                                </p>
+                                                <div class="form-group d-none">
+                                                    <input asp-for="@item.Price" name="Price" class="form-control" />
+                                                </div>
+                                                <p>Adet: <input type="number" value="1" name="quantity" id="quantity" min="1" max="50" /></p>
+                                            </div>
+                                            <button class="btn btn-primary" type="submit">Sepete Ekle</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    }
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

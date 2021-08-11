@@ -1,0 +1,129 @@
+﻿@model Tuple<List<Order>, List<Product>, List<Address>>
+@{
+    ViewData["Title"] = "Siparişlerim";
+}
+<main>
+
+    <div class="row invoice justify-content-center">
+        <div class="col-12">
+            <div class="invoice-contents" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0"
+                 offset="0"
+                 style="background-color:#ffffff; height:800px; max-width:830px; font-family: Helvetica,Arial,sans-serif !important; position: relative;">
+
+                <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0"
+                       style="width:100%; background-color:#ffffff;border-collapse:separate !important; border-spacing:0;color:#242128; margin:0;padding:30px;"
+                       heigth="auto">
+
+                    <tbody>
+
+                        <tr>
+                            <td align="left" valign="center"
+                                style="padding-bottom:35px; padding-top:15px; border-top:0;width:100% !important;">
+                                <img src="/img/logo.png" />
+                            </td>
+                            <td align="right" valign="center"
+                                style="padding-bottom:35px; padding-top:15px; border-top:0;width:100% !important;">
+                                <p style="color: #8f8f8f; font-weight: normal; line-height: 1.2; font-size: 12px; white-space: nowrap; ">
+                                    Çifte Havuzlar Mah. Eski Londra Asfaltı Cad. <br />Kuluçka Merkezi D2 Blok No: 151/1F İç Kapı No: 2B03<br> Esenler/İstanbul<br>784
+                                    0543 488 84 45
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding-top:30px; border-top:1px solid #f1f0f0; border-bottom:1px solid #f1f0f0">
+
+                                <table style="width: 100%; margin-top:40px;">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:left; font-size: 10px; color:#8f8f8f; padding-bottom: 15px;">
+                                                ÜRÜN ADI
+                                            </th>
+                                            <th style="text-align:left; font-size: 10px; color:#8f8f8f; padding-bottom: 15px;">
+                                                ADET
+                                            </th>
+                                            <th style="text-align:right; font-size: 10px; color:#8f8f8f; padding-bottom: 15px;">
+                                                FİYAT
+                                            </th>
+                                            <th style="text-align:right; font-size: 10px; color:#8f8f8f; padding-bottom: 15px;">
+                                                ADRES
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.Item1)
+                                        {
+                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                            <tr>
+                                                <td style="padding-top:0px; padding-bottom:5px;">
+                                                    <h4 style="font-size: 16px; line-height: 1; margin-bottom:0; color:#303030; font-weight:500; margin-top: 10px;">
+                                                        <p href="#"
+                                                           style="font-size: 13px; text-decoration: none; line-height: 1; color:#909090; margin-top:0px; margin-bottom:0;">
+                                                            @Model.Item2.AsQueryable().Where(x => x.ID
+== item.ProductID).Select(x => x.Name).FirstOrDefault()
+                                                        </p>
+                                                    </h4>
+                                                </td>
+
+                                                <td>
+                                                    <p href="#"
+                                                       style="font-size: 13px; text-decoration: none; line-height: 1; color:#909090; margin-top:0px; margin-bottom:0;">
+                                                        @item.Quantity
+                                                    </p>
+                                                </td>
+                                                <td style="padding-top:0px; padding-bottom:0; text-align: right;">
+                                                    <p style="font-size: 13px; line-height: 1; color:#303030; margin-bottom:0; margin-top:0; vertical-align:top; white-space:nowrap;">
+                                                        @item.Price ₺
+                                                    </p>
+                                                </td>
+                                                <td style="padding-top:0px; padding-bottom:0; text-align: right;">
+                                                    <p style="font-size: 13px; line-height: 1; color:#303030; margin-bottom:0; margin-top:0; vertical-align:top; white-space:nowrap;">
+                                                        @Model.Item3.AsQueryable().Where(x => x.ID
+== item.AddressID).Select(x => x.AddressLine).FirstOrDefault()<br />
+                                                        @Model.Item3.AsQueryable().Where(x => x.ID
+== item.AddressID).Select(x => x.City).FirstOrDefault()<br />
+                                                        @Model.Item3.AsQueryable().Where(x => x.ID
+== item.AddressID).Select(x => x.Country).FirstOrDefault()<br />
+                                                        @Model.Item3.AsQueryable().Where(x => x.ID
+== item.AddressID).Select(x => x.CityCode).FirstOrDefault()<br />
+                                                    </p>
+                                                </td>
+
+                                            </tr>
+                                            <tr >
+                                                <td colspan="3">&nbsp;</td>
+                                            </tr>
+
+                                        }
+
+                                    </tbody>
+                                </table>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="border-top:1px solid #f1f0f0">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style=" width: 100%; padding-bottom:15px;">
+                                <p href="#"
+                                   style="font-size: 13px; text-decoration: none; line-height: 1.6; color:#909090; margin-top:0px; margin-bottom:0; text-align: right;">
+                                    <strong>Toplam : </strong>
+                                </p>
+                            </td>
+                            <td style="padding-top:0px; text-align: right; padding-bottom:15px;">
+                                <p style="font-size: 13px; line-height: 1.6; color:#303030; margin-bottom:0; margin-top:0; vertical-align:top; white-space:nowrap; margin-left:15px">
+                                    <strong>
+                                        @ViewBag.Total ₺
+                                    </strong>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="border-top:1px solid #f1f0f0">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
